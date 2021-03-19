@@ -21,7 +21,7 @@
                      <div>Sotuba ACI - Bamako</div>
                      <div>Mali</div>
                      <div>Email: contact@entreprise.com</div>
-                     <div>Phone: +223 60 69 03 43</div>
+                     <div>Phone: +223 76 45 92 74</div>
                  </div>
                  <div class="col-sm-6 ">
                      <h5 class="mb-3">A:</h5>
