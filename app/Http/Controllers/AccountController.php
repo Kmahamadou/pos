@@ -33,7 +33,7 @@ class AccountController extends Controller
     public function destroy($id){
         $account = Account::find($id);
         $account->delete();
-        return redirect()->route('account.index')->with('success-message', 'AccountDeleted Successfully!');
+        return redirect()->route('account.index')->with('success-message', 'Type de payement supprimé avec succès!');
     }
 
     public function edit(Request $request){

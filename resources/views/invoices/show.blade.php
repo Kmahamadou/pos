@@ -1,9 +1,19 @@
 @extends('layouts.pos')
 @section('title', 'Customers')
 @section('block-header', 'Add New Customer')
-
 @section('content')
-<div>
+
+<script>
+function imprimer(printinvoice) {
+      var printContents = document.getElementById(printinvoice).innerHTML;    
+   var originalContents = document.body.innerHTML;      
+   document.body.innerHTML = printContents;     
+   window.print();     
+   document.body.innerHTML = originalContents;
+   }
+</script>
+
+<div id="printinvoice">
  
      <div class="card" style="padding: 5%">
          <div class="card-header ">
@@ -18,21 +28,23 @@
              <div class="row mb-4">
                  <div class="col-sm-6">
                      <h5 class="mb-3">DE:</h5>
-                     <h3 class="text-dark mb-1">{{$invoice->from}}</h3>
+                     <h4 class="text-dark mb-1">{{$invoice->from}}</h4>
                      <div>Sotuba ACI - Bamako</div>
                      <div>Mali</div>
                      <div>Email: contact@entreprise.com</div>
                      <div>Phone: +223 60 69 03 43</div>
                  </div>
                  <div class="col-sm-6 ">
-                     <h5 class="mb-3">A:</h5>
-                     <h3 class="text-dark mb-1">{{$invoice->to}}</h3>
+                    
                      <div></div>
-                     <div></div>
+                       <h5 class="mb-3">A:</h5>
+                       <h4 class="text-dark mb-1">{{$invoice->to}}</h4>
+                    <div></div>
                      <div></div>
                      <div></div>
                  </div>
              </div>
+             <p>*****************************************************</p>
              <div class="table-responsive-sm">
                  <table class="table table-striped">
                      <thead>
@@ -94,12 +106,12 @@
                                  </td>
                                  <td class="right">{{$invoice->amount_return}} Fcfa</td>
                              </tr>
-                             <tr>
+                             <!-- <tr>
                                  <td class="left">
                                      <strong class="text-dark">VAT (10%)</strong>
                                  </td>
                                  <td class="right">{{$invoice->amount_due}} Fcfa</td>
-                             </tr>
+                             </tr> -->
                              {{-- <tr>
                                  <td class="left">
                                      <strong class="text-dark">Total</strong> </td>
@@ -111,11 +123,14 @@
                      </table>
                  </div>
              </div>
+             
          </div>
          <div class="card-footer bg-white">
-             <p class="mb-0">BKO-TECHNOLOGIES</p>
+             <p class="mb-0">CAMARA ELECTRONIQUES</p>
          </div>
      </div>
  </div>
-        
+        <div class="card-footer">
+            <button class="btn btn-primary m-5 py-5" onClick="imprimer('printinvoice')">IMPRIMER</button>
+        </div> 
 @endsection

@@ -73,7 +73,7 @@ class CustomerController extends Controller
             $newCustomer['tin_number'] = '***1234';
         }
         Customer::create($newCustomer);
-        return redirect()->route('customer.index')->with('success-message', 'Customer Added Successfully');
+        return redirect()->route('customer.index')->with('success-message', 'Client ajouté avec succès');
     }
 
     /**
@@ -117,7 +117,7 @@ class CustomerController extends Controller
             'address'   =>  'required'
         ]);
         $updateCustomer->update($updateData);
-        return redirect()->route('customer.index')->with('success-message', 'Data Updated Successfully');
+        return redirect()->route('customer.index')->with('success-message', 'Données mise à jour avec succès');
     }
 
     /**
@@ -130,7 +130,7 @@ class CustomerController extends Controller
     {
         $delCustomer = Customer::find($id);
         $delCustomer->delete();
-        return redirect()->route('customer.index')->with('success-message', 'Customer Deleted Successfully');
+        return redirect()->route('customer.index')->with('success-message', 'Client supprimé avec succès');
     }
     public function import(Request $request){
         if($request->hasFile('file')){
@@ -152,10 +152,10 @@ class CustomerController extends Controller
                 }
                 if(count($list)>0){
                     Customer::insert($list);
-                    return redirect()->route('customer.index')->with('success-message', 'Data uploaded Successfully!');
+                    return redirect()->route('customer.index')->with('success-message', 'Données misent à jour avec succès');
                 }
             }
-            return redirect()->route('customer.index')->with('error-message', 'Opps! Something went wrong. Refresh and try again..');
+            return redirect()->route('customer.index')->with('error-message', 'Opps! Il y a un soucis. Rafraichissez la page et réessayer...');
         }
     }
 }

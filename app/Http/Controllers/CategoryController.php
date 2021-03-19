@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'slug'  =>  'required',
         ]);
         Category::create($validatedData);
-        return redirect()->route('category.index')->with('success-message', 'Category Updated Successfully');
+        return redirect()->route('category.index')->with('success-message', 'Categorie mise à jour avec succès');
     }
 
     /**
@@ -86,7 +86,7 @@ class CategoryController extends Controller
         ]);
         $updatingRow = Category::find($id);
         $updatingRow->update($validatedData);
-        return redirect()->route('category.index')->with('success-message', 'Category Updated Successfully');
+        return redirect()->route('category.index')->with('success-message', 'Categorie mise à jour avec  succès');
     }
 
     /**
@@ -99,6 +99,6 @@ class CategoryController extends Controller
     {
         $delRow = Category::find($id);
         $delRow->delete();
-        return redirect()->route('category.index')->with('success-message', 'Data Deleted Successfully');
+        return redirect()->route('category.index')->with('success-message', 'Données supprimées avec succès');
     }
 }

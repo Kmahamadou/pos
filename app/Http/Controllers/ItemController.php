@@ -48,6 +48,7 @@ class ItemController extends Controller
             'name'  =>  'required',
             'item_code'  =>  'required',
             'purchase_price'    =>  'required',
+            'expenses'    =>  'required',
             'retail_price'      =>  'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:128',
             'vat'  =>  '',
@@ -66,6 +67,7 @@ class ItemController extends Controller
             $insertingRow->name = $validatedData['name'];
             $insertingRow->item_code = $validatedData['item_code'];
             $insertingRow->purchase_price = $validatedData['purchase_price'];
+            $insertingRow->expenses = $validatedData['expenses'];
             $insertingRow->retail_price = $validatedData['retail_price'];
             $insertingRow->image = $uploadedImage;
             $insertingRow->vat = $validatedData['vat'];
@@ -73,9 +75,9 @@ class ItemController extends Controller
             $insertingRow->description = $validatedData['description'];
             $insertingRow->save();
             $insertingRow->categories()->sync($validatedData['category']);
-            return redirect()->route('item.index')->with('success-message', 'Item Added Successfully');
+            return redirect()->route('item.index')->with('success-message', 'Produit ajouté avec succès');
         }
-        return redirect()->route('category.create')->with('error-message', 'Enter Category First');
+        return redirect()->route('category.create')->with('error-message', 'Choisissez une catégorie');
     }
 
     /**
@@ -142,9 +144,9 @@ class ItemController extends Controller
             }
             $updatingRow->update();
             $updatingRow->categories()->sync($request->category);
-            return redirect()->route('item.index')->with('success-message', 'Item Updated Successfully');
+            return redirect()->route('item.index')->with('success-message', 'Produit mise à jour avec succès');
         }
-        return redirect()->route('category.create')->with('error-message', 'Enter Category First');
+        return redirect()->route('category.create')->with('error-message', 'Choisissez une catégorie');
     }
 
     /**
@@ -157,6 +159,6 @@ class ItemController extends Controller
     {
         $delRow = Item::find($id);
         $delRow->delete();
-        return redirect()->route('item.index')->with('success-message', 'Item Deleted Successfully');
+        return redirect()->route('item.index')->with('success-message', 'Produit supprimé avec succès');
     }
 }

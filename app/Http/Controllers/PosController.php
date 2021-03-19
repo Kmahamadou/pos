@@ -44,20 +44,26 @@ class PosController extends Controller
         return view('posindex', ['items'=>$items, 'carts'=>$carts, 'total' => $total, 'vat'=>$vat, 'accounts'=>$accounts]);
     }
     public function addToCart(Request $request){
+        // dd($request);
         $user = Auth::user();
         $cart = new Cart();
         $cart_history = new Carts_history();
+
+        // Find item
         $item = Item::find($request->item_id);
 
+        // Compute new Quantity
         $newQuantity = $item->quantity - $request->quantity;
         $item->quantity = $newQuantity;
         $item->update();
 
+        // Put the record to temporaily card
         $cart->user_id = $user->id;
         $cart->item_id = $request->item_id;
         $cart->quantity = $request->quantity;
         $cart->save();
         
+        // // Put the record to card History
         $cart_history->user_id = $user->id;
         $cart_history->item_id = $request->item_id;
         $cart_history->quantity = $request->quantity;
@@ -72,6 +78,7 @@ class PosController extends Controller
     }
     public function deleteCartItem(Request $request){
         try{
+
             $cart = DB::table('carts')->select(['item_id', 'quantity'])->where('id', $request->id)->get()->first();
             $item = Item::find($cart->item_id);
             $item->quantity += $cart->quantity;
@@ -109,7 +116,7 @@ class PosController extends Controller
             array_push($ids, $cards->id);
         }
         Cart::destroy($ids);
-        return ['success-message' => 'Cart Deleted'];
+        return ['success-message' => 'Panier supprimé'];
     }
 
     public function itemSellInvoiceShow(Request $request){

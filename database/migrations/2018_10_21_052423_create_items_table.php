@@ -18,6 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('name', 255);
             $table->string('item_code', 100);
             $table->float('purchase_price');
+            $table->float('expenses');
             $table->float('retail_price');
             $table->float('quantity');
             $table->float('vat', 4,2);

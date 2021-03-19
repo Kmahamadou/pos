@@ -16,7 +16,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header">
-                    <a href="{{route('item.create')}}" class="btn btn-success">Add New Item</a>
+                    <a href="{{route('item.create')}}" class="btn btn-success">Ajouter Produit</a>
                 </div>
 
                 <div class="body">
@@ -27,7 +27,9 @@
                             <tr>
                                 <th>Sl. No.</th>
                                 <th>Nom</th>
-                                <th>Code</th>
+                                <th>Prix d'achat</th>
+                                <th>Dépenses</th>
+                                <th>Prix de vente</th>
                                 <th>Quantité</th>
                                 <th>Image</th>
                                 <th>Action</th>
@@ -37,7 +39,9 @@
                             <tr>
                                 <th>Sl. No.</th>
                                 <th>Nom</th>
-                                <th>Code</th>
+                                <th>Prix d'achat</th>
+                                <th>Dépenses</th>
+                                <th>Prix de vente</th>
                                 <th>Quantité</th>
                                 <th>Image</th>
                                 <th>Action</th>
@@ -48,7 +52,9 @@
                                 <tr>
                                     <td>{{$loop->index+1}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->item_code}}</td>
+                                    <td>{{$item->purchase_price}}</td>
+                                    <td>{{$item->expenses}}</td>
+                                    <td>{{$item->retail_price}}</td>
                                     <td>{{$item->quantity}}</td>
                                     <td><img height="100" width="100" src="{{asset('/images/items/'.$item->image)}}" alt=""></td>
                                     <td>

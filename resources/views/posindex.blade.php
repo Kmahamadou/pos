@@ -1,7 +1,7 @@
 @extends('layouts.pos')
 @section('title', 'POS')
 @section('head')
-    <link href="{{asset('/inpos/css/jquery-ui.minb.css')}}" rel="stylesheet">
+    <link href="{{asset('/inpos/css/jquery-ui.min.css')}}" rel="stylesheet">
     <link href="{{asset('/inpos/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
     <link href="{{asset('/inpos/plugins/jquery-spinner/css/bootstrap-spinner.css')}}" rel="stylesheet">
     <style>
@@ -72,14 +72,14 @@
                             <form action="{{route('sellInvoice.show')}}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="amount_payable">Montant à payer</label>
+                                <label for="amount_payable">MONTANT A PAYER</label>
                                 <div class="form-line">
                                     <input type="text" id="amount_payable" class="form-control" disabled>
                                     <input type="hidden" name="amount_payable" id="total_payable">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="paid_by">Payer par</label>
+                                <label for="paid_by">PAYER PAR</label>
                                 <select class="form-control show-tick" name="account_id">
                                     @foreach($accounts as $account)
                                         <option value="{{$account->id}}">{{$account->name}}</option>
@@ -88,24 +88,24 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="amount_paid">Montant Payer</label>
+                                <label for="amount_paid">MONTANT PAYER</label>
                                 <div class="form-line">
                                     <input type="text" class="form-control" placeholder="Amount Paid" id="amount_paid" name="amount_paid">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="note">Remarque</label>
+                                <label for="note">REMAQUE</label>
                                 <div class="form-line">
                                     <textarea class="form-control" placeholder="Note.." id="note" name="note"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="customer">Client <span><a href="{{route('customer.create')}}" target="_blank" class="btn btn-primary">Ajouter un nouveau client</a></span></label>
+                                <label for="customer">CLIENT <span><a href="{{route('customer.create')}}" target="_blank" class="btn btn-primary">Ajouter un nouveau client</a></span></label>
                                 <div class="form-line">
                                     <input type="text" class="form-control" placeholder="Customer Mobile No." id="customer_no" name="customer_no">
                                 </div>
                             </div>
-                                <button class="btn btn-primary" type="submit">Valider</button>
+                                <button class="btn btn-primary" type="submit">VALIDER</button>
                             </form>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
             <div class="card">
                 <div class="header loader-div">
                     <h2 style="display: inline-block;">
-                        Produits à vendre
+                        PRODUITS A VENDRE
                     </h2>
                     <div class="lds-ellipsis m-l-25" style="display: none"><div></div><div></div><div></div><div></div></div>
                 </div>
@@ -178,7 +178,7 @@
                             <div class="totalInfo clearfix m-t-20 b-t b-b p-t-10 p-b-10">
                                 <div class="totalDiv">
                                     <p class="title">Total = <span class="amount">{{$total}}</span></p>
-                                    <p class="title">Vat = <span class="amount">{{$vat}}</span></p>
+                                    <p class="title">TVA = <span class="amount">{{$vat}}</span></p>
                                     <p class="title">Montant à payer = <span class="amount" id="amountToBePaid">{{$total + $vat}}</span></p>
                                 </div>
                             </div>

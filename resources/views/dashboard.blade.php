@@ -119,9 +119,9 @@
                 </div>
             </div>
             <!-- #END# CPU Usage -->
-            <div class="row clearfix">
+            <!-- <div class="row clearfix"> -->
                 <!-- Visitors -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+               <!--  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="body bg-pink">
                             <div class="sparkline" data-type="line" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
@@ -146,10 +146,10 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- #END# Visitors -->
                 <!-- Latest Social Trends -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="body bg-cyan">
                             <div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
@@ -178,10 +178,10 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- #END# Latest Social Trends -->
                 <!-- Answered Tickets -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+               <!--  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="body bg-teal">
                             <div class="font-bold m-b--35">ANSWERED TICKETS</div>
@@ -213,13 +213,13 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- #END# Answered Tickets -->
-            </div>
+            <!-- </div> -->
 
             <div class="row clearfix">
                 <!-- Task Info -->
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <!-- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="card">
                         <div class="header">
                             <h2>TASK INFOS</h2>
@@ -311,13 +311,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- #END# Task Info -->
                 <!-- Browser Usage -->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
                         <div class="header">
-                            <h2>BROWSER USAGE</h2>
+                            <h2>UTILISATION DU NAVIGATEUR</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

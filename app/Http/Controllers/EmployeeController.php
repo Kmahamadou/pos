@@ -50,7 +50,7 @@ class EmployeeController extends Controller
             'permanent_address'    =>  'required',
         ]);
         Employee::create($validatedData);
-        return redirect()->route('employee.index')->with('success-message', 'Employee Inserted Successfully');
+        return redirect()->route('employee.index')->with('success-message', 'Employé inseré avec succès');
     }
 
     /**
@@ -96,7 +96,7 @@ class EmployeeController extends Controller
         ]);
         $updatingRow = Employee::find($id);
         $updatingRow->update($validatedData);
-        return redirect()->route('employee.index')->with('success-message', 'Employee Updated Successfully');
+        return redirect()->route('employee.index')->with('success-message', 'Employé mise ) jour avec succès');
     }
 
     /**
@@ -109,6 +109,6 @@ class EmployeeController extends Controller
     {
         $delRow = Employee::find($id);
         $delRow->delete();
-        return redirect()->route('employee.index')->with('success-message', 'Employee Deleted Successfully');
+        return redirect()->route('employee.index')->with('success-message', 'Employé supprimé avec succès');
     }
 }

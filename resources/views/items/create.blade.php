@@ -43,26 +43,26 @@
                         <div class="row clearfix">
                             @csrf
                             <div class="col-sm-6">
-                                <label for="name">Nom (Required)***</label>
+                                <label for="name">Nom ***</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input class="form-control" placeholder="Enter Item Name" type="text" name="name">
+                                        <input required class="form-control" placeholder="Enter Item Name" type="text" name="name">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <label for="item_code">Code Produit (Required)***</label>
+                                <label for="item_code">Code Produit ***</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input class="form-control" placeholder="Enter Item Code" type="text" name="item_code">
+                                        <input required class="form-control" placeholder="Enter Item Code" type="text" name="item_code">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <label for="purchase_price">Prix D'achat (Required)***</label>
+                                <label for="purchase_price">Prix D'achat ***</label>
                                 <div class="input-group spinner" data-trigger="spinner">
                                     <div class="form-line">
-                                        <input class="form-control text-center" type="text" name="purchase_price"  value="0" data-rule="currency">
+                                        <input required class="form-control text-center" type="text" name="purchase_price"  value="0" data-rule="currency">
                                     </div>
                                     <span class="input-group-addon">
                                         <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -71,10 +71,22 @@
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <label for="retail_price">Prix de Vente (Required)***</label>
+                                <label for="purchase_price">Dépenses ***</label>
                                 <div class="input-group spinner" data-trigger="spinner">
                                     <div class="form-line">
-                                        <input class="form-control text-center" type="text" name="retail_price"  value="0" data-rule="currency">
+                                        <input required class="form-control text-center" type="text" name="expenses"  value="0" data-rule="currency">
+                                    </div>
+                                    <span class="input-group-addon">
+                                        <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                        <a href="javascript:;" class="spin-down" data-spin="down"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="retail_price">Prix deVente ***</label>
+                                <div class="input-group spinner" data-trigger="spinner">
+                                    <div class="form-line">
+                                        <input required class="form-control text-center" type="text" name="retail_price"  value="0" data-rule="currency">
                                     </div>
                                     <span class="input-group-addon">
                                         <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -86,7 +98,7 @@
                                 <label for="vat">TVA</label>
                                 <div class="input-group spinner" data-trigger="spinner">
                                     <div class="form-line">
-                                        <input class="form-control text-center" type="text" name="vat"  value="0" data-rule="currency">
+                                        <input required class="form-control text-center" type="text" name="vat"  value="0" data-rule="currency">
                                     </div>
                                     <span class="input-group-addon">
                                         <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -105,10 +117,10 @@
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <label for="quantity">Quantité (Required)***</label>
+                                <label for="quantity">Quantité ***</label>
                                 <div class="input-group spinner" data-trigger="spinner">
                                     <div class="form-line">
-                                        <input id="spinnerInput" class="form-control text-center" type="text" name="quantity"  value="0" data-rule="quantity">
+                                        <input required id="spinnerInput" class="form-control text-center" type="text" name="quantity"  value="0" data-rule="quantity">
                                     </div>
                                     <span class="input-group-addon">
                                         <a href="javascript:;" class="spin-up" data-spin="up"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -130,9 +142,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="image">Image du Produit (Required)***</label>
+                                            <label for="image">Image du Produit ***</label>
                                             <div class="box">
-                                                <input type="file" name="image" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple onchange="readURL(this)"/>
+                                                <input required type="file" name="image" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple onchange="readURL(this)"/>
                                                 <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choisir une Image&hellip;</span></label>
                                             </div>
                                         </div>
@@ -147,7 +159,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <button class="btn btn-primary" type="submit">Valider</button>
+                                <button class="btn btn-primary" type="submit">VALIDER</button>
                             </div>
                         </div>
                     </form>

@@ -20,7 +20,12 @@ $user = \Illuminate\Support\Facades\Auth::user();
     <!-- Bootstrap Core Css -->
     {{--<link href="{{asset('inpos/plugins/bootstrap/css/boots.min.css')}}" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ asset('bootstrap341/css/bootstrap.min.css') }}">
+
+    <!-- <link rel="stylesheet" href="{{ asset('bootstrap337/bootstrap.min.css') }}"> -->
     <!-- Waves Effect Css -->
+    
     <link href="{{asset('inpos/plugins/node-waves/waves.css')}}" rel="stylesheet" />
 
     <!-- Animation Css -->
@@ -207,7 +212,7 @@ $user = \Illuminate\Support\Facades\Auth::user();
                             <ul class="menu tasks">
                                 <div class="user-info">
                                     <div class="image text-center">
-                                        <img src="{{asset('/images/'.$user->image)}}" alt="{{$user->business_name}}">
+                                        <img src="http://127.0.0.1:8000/images/avatar.png" alt="{{$user->business_name}}">
                                     </div>
                                     <div class="info-container">
                                         <div class="sub-info-container">
@@ -218,7 +223,7 @@ $user = \Illuminate\Support\Facades\Auth::user();
                                 </div>
                             </ul>
                         </li>
-                        <li class="body">
+                        <!-- <li class="body">
                             <ul class="menu">
                            {{--      <li>
                                     <a href="{{route('showuserprofile', $user->id)}}">
@@ -230,6 +235,7 @@ $user = \Illuminate\Support\Facades\Auth::user();
                                         </div>
                                     </a>
                                 </li> --}}
+                                -->
                                 <li>
                                     <a href="{{route('logout')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -246,12 +252,9 @@ $user = \Illuminate\Support\Facades\Auth::user();
                                 </li>
                             </ul>
                         </li>
-                    </ul>
-                </li>
 
-                <!-- #END# Tasks -->
-            </ul>
-        </div>
-    </div>
-</nav>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 <!-- #Top Bar -->
